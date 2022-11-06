@@ -8,5 +8,6 @@ namespace eCommerce.Data
         public Book Book { get; set; }
         public int SkillId { get; set; }
         public Skills Skill { get; set; }
+
     }
 }
