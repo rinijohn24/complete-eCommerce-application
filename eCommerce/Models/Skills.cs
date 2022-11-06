@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using eCommerce.Data;
+using System.ComponentModel.DataAnnotations;
 
 namespace eCommerce.Models
 {
@@ -8,6 +9,6 @@ namespace eCommerce.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
-        
+        public List<Skills_Book> Skills_Book { get; set; }
     }
 }

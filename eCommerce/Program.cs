@@ -1,5 +1,11 @@
-var builder = WebApplication.CreateBuilder(args);
+using eCommerce.Data;
+using Microsoft.EntityFrameworkCore;
 
+var builder = WebApplication.CreateBuilder(args);
+//var config = builder.Configuration;
+
+//DbContext Configuration
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -24,4 +30,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+AppDbInitializer.Seed(app);
 app.Run();
