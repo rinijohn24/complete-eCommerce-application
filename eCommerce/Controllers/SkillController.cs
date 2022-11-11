@@ -14,7 +14,7 @@ namespace eCommerce.Controllers
         public IActionResult Index()
         {
             var data = _context.Skills.ToList();
-            return View();
+            return View(data);
         }
     }
 }
